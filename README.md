@@ -2,7 +2,7 @@
 
 Quick start of docker container for Node.js, Mongodb, Elasticsearch using docker-compose.
 
-Update your mongo user in mongo/user.sh and set an user and a password.
+Update the mongo user and password in mongo/user.sh and replace the XxX by an user and a password.
 
 Command: # docker-compose up --build.
 
