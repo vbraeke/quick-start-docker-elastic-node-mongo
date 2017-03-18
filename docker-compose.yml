@@ -1,0 +1,25 @@
+back:
+    build: app
+    links:
+        - mongo:mongo
+    ports:
+        - "4206:4206"
+    volumes:
+        - "./app/src:/src/"
+
+elasticsearch:
+    build: elastic
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      network.host: "_non_loopback_"
+      cluster.name: "my-cluster"
+
+mongo:
+    build: mongo
+    ports:
+        - "27017:27017"
+    volumes:
+        - "./mongo/data:/data/db"
